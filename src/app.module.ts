@@ -11,7 +11,7 @@ import { AlbumModule } from './album/album.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '1234',
+      password: 'T599310631t',
       database: 'vibedatabase',
       synchronize: true,
       autoLoadEntities: true,
