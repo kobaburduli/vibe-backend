@@ -1,16 +1,16 @@
-import { IsArray, IsString } from "class-validator";
+import { IsArray, IsString } from 'class-validator';
 
 export class CreateAuthorDto {
-    @IsString()
-    firstName: string;
+  @IsString()
+  firstName: string;
 
-    @IsString()
-    lastName: string;
+  @IsString()
+  lastName: string;
 
-    @IsString({each: true})
-    @IsArray()
-    musics: string[];
+  @IsArray()
+  @IsString({ each: true })
+  musics: string[];
 
-    @IsString()
-    biography: string;
+  @IsString()
+  biography: string;
 }

@@ -46,7 +46,7 @@ export class AuthorRepository {
         .execute()
     }
 
-    async remove(id){
+    async remove(id: number){
         return await this.authorRepositoy
         .createQueryBuilder()
         .delete()
