@@ -21,7 +21,7 @@ export class MusicService {
   }
 
   async update(id: number, updateMusicDto: UpdateMusicDto) {
-    return await this.musicReposiotry.update(id, UpdateMusicDto);
+    return await this.musicReposiotry.update(id, updateMusicDto);
   }
 
   async remove(id: number) {

@@ -41,7 +41,7 @@ export class MusicRepository {
       .createQueryBuilder('music')
       .update()
       .set(updateMusicDto)
-      .where('music.id = :id', { id })
+      .where('id = :id', { id })
       .execute();
   }
 
