@@ -1,15 +1,16 @@
-import { IsArray, IsNumber, IsString } from "class-validator";
+import { IsArray, IsNumber, IsString } from 'class-validator';
 
 export class CreateAlbumDto {
-    @IsString()
-    title: string;
+  @IsString()
+  title: string;
 
-    @IsString()
-    releaseDate: string;
+  @IsString()
+  releaseDate: string;
 
-    @IsArray()
-    musics: string[];
+  @IsArray()
+  @IsString({ each: true })
+  musics: string[];
 
-    @IsNumber()
-    artistId: number;
+  @IsNumber()
+  artistId: number;
 }
