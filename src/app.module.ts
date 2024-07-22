@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AlbumModule } from './album/album.module';
-import { AuthorModule } from './author/author.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AlbumModule } from './album/album.module';
 
 @Module({
   imports: [
-    AuthorModule,
     AlbumModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
