@@ -13,9 +13,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: 3306,
       username: 'root',
       password: '1234',
-      database: 'musicdatabase',
+      database: 'vibedatabase',
       autoLoadEntities: true,
-      synchronize: true
+      synchronize: true,
     }),
   ],
   controllers: [AppController],
