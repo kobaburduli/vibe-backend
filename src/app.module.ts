@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AlbumModule } from './album/album.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -13,8 +13,8 @@ import { AlbumModule } from './album/album.module';
       username: 'root',
       password: '1234',
       database: 'vibedatabase',
-      synchronize: true,
       autoLoadEntities: true,
+      synchronize: true,
     }),
     AlbumModule,
   ],
