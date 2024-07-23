@@ -1,4 +1,4 @@
-import { IsArray, IsNumber, IsString } from 'class-validator';
+import { IsArray, IsNumber, IsString, IsUrl } from 'class-validator';
 
 export class CreateAlbumDto {
   @IsString()
@@ -8,7 +8,7 @@ export class CreateAlbumDto {
   releaseDate: string;
 
   @IsArray()
-  @IsString({ each: true })
+  @IsUrl({}, { each: true })
   musics: string[];
 
   @IsNumber()
