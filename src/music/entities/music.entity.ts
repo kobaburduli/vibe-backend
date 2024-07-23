@@ -16,7 +16,7 @@ export class MusicEntity {
   name: string;
 
   @Column()
-  artistId: string;
+  artistId: number;
 
   @Column()
   duration: number;
