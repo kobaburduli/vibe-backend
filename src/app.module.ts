@@ -4,11 +4,13 @@ import { AppService } from './app.service';
 import { MusicModule } from './music/music.module';
 import { AuthorModule } from './author/author.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AlbumModule } from './album/album.module';
 
 @Module({
   imports: [
     MusicModule,
     AuthorModule,
+    AlbumModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
