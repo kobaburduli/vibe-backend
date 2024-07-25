@@ -12,16 +12,16 @@ export class AuthorEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({type: 'varchar'})
   firstName: string;
 
-  @Column()
+  @Column({type: 'varchar'})
   lastName: string;
 
   @Column({ type: 'simple-array', nullable: true })
   musics: string[];
 
-  @Column()
+  @Column({type: 'varchar'})
   biography: string;
 
   @CreateDateColumn()
