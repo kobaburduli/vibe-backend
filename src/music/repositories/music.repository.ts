@@ -53,4 +53,9 @@ export class MusicRepository {
       .where('id = :id', { id })
       .execute();
   }
+
+
+  async findByName(search: string){
+    
+  }
 }
