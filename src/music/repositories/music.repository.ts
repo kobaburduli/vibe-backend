@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateMusicDto } from '../dto/create-music.dto';
 import { UpdateMusicDto } from '../dto/update-music.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { MusicEntity } from '../entities/music.entity';
 
 @Injectable()
@@ -56,6 +56,9 @@ export class MusicRepository {
 
 
   async findByName(search: string){
-    
+    return await this.musicReposiotry
+    .createQueryBuilder('music')
+    .where('music.name LIKE :search', {search: `%${search}%`})
+    .getMany()
   }
 }
