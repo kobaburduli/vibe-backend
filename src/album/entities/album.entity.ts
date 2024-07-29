@@ -7,6 +7,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+
+
 @Entity()
 export class AlbumEntity {
   @PrimaryGeneratedColumn()
@@ -23,6 +25,9 @@ export class AlbumEntity {
 
   @Column({ type: 'int' })
   artistId: number;
+
+  @Column({type: 'int'})
+  musicId: number;
 
   @CreateDateColumn()
   createdAt: Date;
