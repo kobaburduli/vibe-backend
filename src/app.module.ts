@@ -5,6 +5,7 @@ import { MusicModule } from './music/music.module';
 import { AuthorModule } from './author/author.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AlbumModule } from './album/album.module';
+import { SearchModule } from './search/search.module';
 
 @Module({
   imports: [
@@ -16,11 +17,12 @@ import { AlbumModule } from './album/album.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '1234',
+      password: '',
       database: 'vibedatabase',
       autoLoadEntities: true,
       synchronize: true,
     }),
+    SearchModule,
   ],
   controllers: [AppController],
   providers: [AppService],

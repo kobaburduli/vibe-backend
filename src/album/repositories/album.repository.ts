@@ -4,6 +4,7 @@ import { AlbumEntity } from '../entities/album.entity';
 import { Repository } from 'typeorm';
 import { CreateAlbumDto } from '../dto/create-album.dto';
 import { UpdateAlbumDto } from '../dto/update-album.dto';
+import { title } from 'process';
 
 @Injectable()
 export class AlbumRepository {
@@ -49,5 +50,12 @@ export class AlbumRepository {
       .from(AlbumEntity)
       .where('album.id = :id', { id })
       .execute();
+  }
+
+  async findByName(search: string){
+    return await this.albumrepository
+    .createQueryBuilder('album')
+    .where('album.title LIKE :search', {search: `%${search}%`})
+    .getMany()
   }
 }
