@@ -5,8 +5,7 @@ import { MusicRepository } from './repositories/music.repository';
 
 @Injectable()
 export class MusicService {
-
-  constructor(private readonly musicReposiotry: MusicRepository){}
+  constructor(private readonly musicReposiotry: MusicRepository) {}
 
   async create(createMusicDto: CreateMusicDto) {
     return await this.musicReposiotry.create(createMusicDto);
@@ -26,5 +25,16 @@ export class MusicService {
 
   async remove(id: number) {
     return await this.musicReposiotry.remove(id);
+  }
+
+  async listenCounter(id: number) {
+    const music = await this.musicReposiotry.findOne(id);
+
+    if (!music) {
+      throw new Error('Music not found');
+    }
+
+    music.listenCount++;
+    return this.musicReposiotry.save(music);
   }
 }

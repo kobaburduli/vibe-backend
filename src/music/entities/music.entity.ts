@@ -12,14 +12,17 @@ export class MusicEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({type: 'varchar'})
+  @Column({ type: 'varchar' })
   name: string;
 
-  @Column({type: 'int'})
+  @Column({ type: 'int' })
   artistId: number;
 
-  @Column({type: 'int'})
+  @Column({ type: 'int' })
   duration: number;
+
+  @Column({ default: 0 })
+  listenCount: number;
 
   @CreateDateColumn()
   createdAt: Date;

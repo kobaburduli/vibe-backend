@@ -17,7 +17,7 @@ import { SearchModule } from './search/search.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '',
+      password: 'T599310631t',
       database: 'vibedatabase',
       autoLoadEntities: true,
       synchronize: true,
