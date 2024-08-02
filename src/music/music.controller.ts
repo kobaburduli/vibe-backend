@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { MusicService } from './music.service';
 import { CreateMusicDto } from './dto/create-music.dto';
 import { UpdateMusicDto } from './dto/update-music.dto';
@@ -23,8 +31,16 @@ export class MusicController {
   }
 
   @Patch(':id')
-  async update(@Param('id') id: string, @Body() updateMusicDto: UpdateMusicDto) {
+  async update(
+    @Param('id') id: string,
+    @Body() updateMusicDto: UpdateMusicDto,
+  ) {
     return await this.musicService.update(+id, updateMusicDto);
+  }
+
+  @Patch(':id/music')
+  async listenCounter(@Param('id') id: number) {
+    return this.musicService.listenCounter(id);
   }
 
   @Delete(':id')

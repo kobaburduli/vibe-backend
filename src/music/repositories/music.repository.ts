@@ -7,6 +7,7 @@ import { MusicEntity } from '../entities/music.entity';
 
 @Injectable()
 export class MusicRepository {
+  [x: string]: any;
   constructor(
     @InjectRepository(MusicEntity)
     private musicReposiotry: Repository<MusicEntity>,
@@ -21,10 +22,7 @@ export class MusicRepository {
   }
 
   async findAll() {
-    return await this.musicReposiotry
-    .createQueryBuilder()
-    .select()
-    .getMany();
+    return await this.musicReposiotry.createQueryBuilder().select().getMany();
   }
 
   async findOne(id: number) {
@@ -54,11 +52,10 @@ export class MusicRepository {
       .execute();
   }
 
-
-  async findByName(search: string){
+  async findByName(search: string) {
     return await this.musicReposiotry
-    .createQueryBuilder('music')
-    .where('music.name LIKE :search', {search: `%${search}%`})
-    .getMany()
+      .createQueryBuilder('music')
+      .where('music.name LIKE :search', { search: `%${search}%` })
+      .getMany();
   }
 }
